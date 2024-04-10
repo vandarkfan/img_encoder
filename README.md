@@ -4,7 +4,7 @@ After a large number of experiments, we found that there is an error in “set t
 
 <center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"     src="img/cluster_ab.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #000;    padding: 2px;">Figure a: Research on parameter sensitivity to the number of clusters. </div> </center>
 
-The horizontal axis in the above figure represents the number of clusters, while the vertical axis represents Hits@1 . Consistent with the ablation experiment, we also removed steps 2 and 3. We can see a significant correlation between the number of clusters and the final result. We speculate that for different KGs, the number of clusters should be positively correlated with the sparsity of the knowledge graph, that is, with the proportion of entities and triples in the knowledge graph.
+The horizontal axis in the above figure represents the number of clusters, while the vertical axis represents Hits@1 . Consistent with the ablation experiment, we also removed steps 2 and 3. We can see a significant correlation between the number of clusters and the final result. We speculate that for different KGs, the number of clusters should be positively correlated with the sparsity of the knowledge graph, that is, with the proportion of entities and triples in the knowledge graph. The experiment shows that step 1 performs well in WN18RR, ICEWS14, and NELL-One knowledge graphs, but performs poorly in FB15k-237. This may be due to the latter being more well constructed and the knowledge graph being denser.
 
 # B. Discussion on the step 2 (Section 3.4)
 
@@ -27,6 +27,7 @@ We decide to add ablation experiments in other KGs.
     <th class="tg-c3ow" colspan="3">WN18RR</th>
     <th class="tg-c3ow" colspan="3">FB15k-237</th>
     <th class="tg-c3ow" colspan="3">ICEWS14</th>
+    <th class="tg-c3ow" colspan="3">NELL-One</th>
   </tr>
   <tr>
     <th class="tg-c3ow">MRR</th>
@@ -38,6 +39,9 @@ We decide to add ablation experiments in other KGs.
     <th class="tg-c3ow">MRR</th>
     <th class="tg-c3ow">H@1</th>
     <th class="tg-c3ow">H@3</th>
+    <th class="tg-c3ow">MRR</th>
+    <th class="tg-c3ow">H@1</th>
+    <th class="tg-c3ow">H@5</th>
   </tr>
 </thead>
 <tbody>
@@ -54,6 +58,9 @@ We decide to add ablation experiments in other KGs.
     <td class="tg-c3ow">59.3</td>
     <td class="tg-c3ow">51.3</td>
     <td class="tg-c3ow">63.9</td>
+    <td class="tg-c3ow">30.8</td>
+    <td class="tg-c3ow">21.9</td>
+    <td class="tg-c3ow">40.7</td>
   </tr>
   <tr>
     <td class="tg-c3ow">&#x2713;</h3></td>
@@ -68,6 +75,9 @@ We decide to add ablation experiments in other KGs.
     <td class="tg-c3ow">59.8</td>
     <td class="tg-c3ow">51.8</td>
     <td class="tg-c3ow">64.7</td>
+ 	<td class="tg-c3ow">34.0</td>
+    <td class="tg-c3ow">25.5</td>
+    <td class="tg-c3ow">43.2</td>
   </tr>
   <tr>
     <td class="tg-c3ow">&#x2713;</h3></td>
@@ -82,6 +92,9 @@ We decide to add ablation experiments in other KGs.
     <td class="tg-c3ow">59.9</td>
     <td class="tg-c3ow">52.1</td>
     <td class="tg-c3ow">65.0</td>
+ 	<td class="tg-c3ow">34.2</td>
+    <td class="tg-c3ow">25.8</td>
+    <td class="tg-c3ow">43.2</td>
   </tr>
   <tr>
     <td class="tg-c3ow">&#x2713;</h3></td>
@@ -96,6 +109,9 @@ We decide to add ablation experiments in other KGs.
     <td class="tg-c3ow"><span style="font-weight:bold">60.7</span></td>
     <td class="tg-c3ow"><span style="font-weight:bold">52.9</span></td>
     <td class="tg-c3ow"><span style="font-weight:bold">65.4</span></td>
+    <td class="tg-c3ow"><span style="font-weight:bold">34.2</span></td>
+    <td class="tg-c3ow"><span style="font-weight:bold">25.8</span></td>
+    <td class="tg-c3ow"><span style="font-weight:bold">43.2</span></td>
   </tr>
 </tbody>
 </table>
